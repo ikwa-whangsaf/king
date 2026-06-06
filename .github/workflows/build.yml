@@ -1,0 +1,63 @@
+name: Build IkwaNewera APKs
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-receiver:
+    name: Build Receiver (Target) APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Make gradlew executable
+        working-directory: receiver
+        run: chmod +x gradlew
+
+      - name: Build Receiver APK
+        working-directory: receiver
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Upload Receiver APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: IkwaNewera-Target
+          path: receiver/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 30
+
+  build-controller:
+    name: Build Controller APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Make gradlew executable
+        working-directory: controller
+        run: chmod +x gradlew
+
+      - name: Build Controller APK
+        working-directory: controller
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Upload Controller APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: IkwaNewera-Controller
+          path: controller/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 30

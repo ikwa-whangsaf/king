@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D1A">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IKWA·NEWERA"
+                    android:textColor="#BF5FFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.15" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CONTROLLER"
+                    android:textColor="#4A4A6A"
+                    android:textSize="9sp"
+                    android:letterSpacing="0.3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="● OFFLINE"
+                    android:textColor="#666666"
+                    android:textSize="11sp"
+                    android:background="@drawable/badge_bg"
+                    android:padding="5dp"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/tvReceiverStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TARGET OFFLINE"
+                    android:textColor="#FF3355"
+                    android:textSize="10sp"
+                    android:background="@drawable/badge_bg"
+                    android:padding="5dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1A1A2E"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Server Config -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:padding="14dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="// SERVER CONFIG"
+                android:textColor="#7A7A9D"
+                android:textSize="9sp"
+                android:letterSpacing="0.3"
+                android:layout_marginBottom="10dp" />
+
+            <EditText
+                android:id="@+id/etServerUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="ws://192.168.1.1:4101"
+                android:textColor="#BF5FFF"
+                android:textColorHint="#333355"
+                android:background="@drawable/input_bg"
+                android:padding="12dp"
+                android:textSize="13sp"
+                android:inputType="textUri"
+                android:layout_marginBottom="10dp" />
+
+            <Button
+                android:id="@+id/btnConnect"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:text="CONNECT"
+                android:textColor="#BF5FFF"
+                android:background="@drawable/btn_outline"
+                android:letterSpacing="0.15"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Controls -->
+        <LinearLayout
+            android:id="@+id/controlsPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:padding="14dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="// KONTROL TARGET"
+                android:textColor="#7A7A9D"
+                android:textSize="9sp"
+                android:letterSpacing="0.3"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Senter row -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SENTER"
+                android:textColor="#4A4A6A"
+                android:textSize="9sp"
+                android:letterSpacing="0.3"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <Button
+                    android:id="@+id/btnTorchBack"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:text="🔦 BELAKANG"
+                    android:textColor="#9B9BB0"
+                    android:background="@drawable/ctrl_btn_bg"
+                    android:textSize="11sp"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnTorchFront"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:text="💡 DEPAN"
+                    android:textColor="#9B9BB0"
+                    android:background="@drawable/ctrl_btn_bg"
+                    android:textSize="11sp"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnTorchOff"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:text="⚫ OFF"
+                    android:textColor="#9B9BB0"
+                    android:background="@drawable/ctrl_btn_bg"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <!-- Sistem row -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SISTEM"
+                android:textColor="#4A4A6A"
+                android:textSize="9sp"
+                android:letterSpacing="0.3"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="6dp">
+
+                <Button
+                    android:id="@+id/btnVibrate"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:text="📳\nVIBRASI"
+                    android:textColor="#9B9BB0"
+                    android:background="@drawable/ctrl_btn_bg"
+                    android:textSize="10sp"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnScreenOff"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:text="🌑\nLAYAR OFF"
+                    android:textColor="#FF3355"
+                    android:background="@drawable/ctrl_btn_danger"
+                    android:textSize="10sp"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnKeepAwake"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:text="👁\nKEEP AWAKE"
+                    android:textColor="#9B9BB0"
+                    android:background="@drawable/ctrl_btn_bg"
+                    android:textSize="10sp"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnRefresh"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:text="📡\nREFRESH"
+                    android:textColor="#9B9BB0"
+                    android:background="@drawable/ctrl_btn_bg"
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Status Panel -->
+        <LinearLayout
+            android:id="@+id/statusPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:padding="14dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="// STATUS TARGET"
+                android:textColor="#7A7A9D"
+                android:textSize="9sp"
+                android:letterSpacing="0.3"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/stat_box"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:layout_marginEnd="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PLATFORM"
+                        android:textColor="#4A4A6A"
+                        android:textSize="9sp"
+                        android:letterSpacing="0.2" />
+
+                    <TextView
+                        android:id="@+id/tvBattery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--"
+                        android:textColor="#BF5FFF"
+                        android:textSize="11sp"
+                        android:fontFamily="monospace" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/stat_box"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MODEL"
+                        android:textColor="#4A4A6A"
+                        android:textSize="9sp"
+                        android:letterSpacing="0.2" />
+
+                    <TextView
+                        android:id="@+id/tvModel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--"
+                        android:textColor="#BF5FFF"
+                        android:textSize="11sp"
+                        android:fontFamily="monospace" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Log -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:padding="14dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="// LOG"
+                android:textColor="#7A7A9D"
+                android:textSize="9sp"
+                android:letterSpacing="0.3"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvLog"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:textColor="#7A5F9B"
+                android:textSize="10sp"
+                android:fontFamily="monospace"
+                android:text="Menunggu koneksi..."
+                android:scrollbars="vertical" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
